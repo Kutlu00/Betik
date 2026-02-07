@@ -1,0 +1,9 @@
+import random
+A=random.randint(1,6)
+B=random.randint(1,6)
+if A%2==0 and B%2==0:
+    print("fener kazandı")
+elif A%2==1 and B%2==1:
+    print("galata kazandı")
+else:
+    print("berabere")
