@@ -1,0 +1,57 @@
+f = open("turkmenistan.txt",'r',encoding='utf-8')
+print(f.read())
+
+with open("turkmenistan.txt", "a") as f:
+  f.write("irem")
+
+  try:
+
+      f=open("turkmen.txt","x")
+
+  except:
+
+    print("böyle bir dosya mevcut, başka isim ver")
+
+    isimler=['eren','nasiba','gncha','gülsenem','ırmak']
+    for isim in isimler:
+      with open("turkmen.txt", "a",encoding="utf-8") as f:
+        f.write(isim)
+
+szl={
+  'isim':'ali',
+  'yas':20,
+  'cinsiyet':'erkek',
+  'dogum_yeri':'bakırköy'
+}
+for i in szl.values():
+  print(i)
+print(szl['yas'])
+
+ogrenciler=[{
+  'isim':'kutlu',
+  'yas':20,
+  'cinsiyet':'erkek',
+  'dogum_yeri':'bakırköy'
+},{
+  'isim':'irem',
+  'yas':20,
+  'cinsiyet':'kız',
+  'dogum_yeri':'sinop'
+},{
+  'isim':'ogır',
+  'yas':21,
+  'cinsiyet':'erkek',
+  'dogum_yeri':'etliekmek'
+}]
+
+from abc import *
+s=' '
+for i in ogrenciler:
+    if i['cinsiyet']=='kız' and i['yas']<20:
+        s=1
+print(s)
+print(type(s))
+s=str(s)
+print(type(s))
+with open("turkmen.txt", "a", encoding="utf-8") as f:
+    f.write(s)
