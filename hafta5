@@ -1,0 +1,18 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+
+def get_link(i):
+    r = requests.get(i)
+    soup = BeautifulSoup(r.content, 'html.parser')
+    list = soup.find_all("div", "col-lg-6")
+    for x in list:
+        for link in i.findAll('a'):
+            my_link = link.get('href') + "\n"
+            result = my_link.startswith("https://ubis.aydin.edu.tr",my_link)
+            with open("abc.txt", 'a', encoding="utf-8") as file:
+               file.write(result+'\n')
+x='https://www.milligazete.com.tr/arsiv/2021-07-26'
+get_link(x)
+def get_content():
