@@ -1,0 +1,24 @@
+import random
+import random as r
+kurbanlar=[]
+kurtulanlar=[]
+olen=""
+for i in range(6):
+    secim=input("Kurbanı Seç")
+    print("{} Seçildi".format(secim))
+    kurbanlar.append(secim)
+print("Silah Çekildi")
+patladi=False
+sayac=1
+r=random.randint(1,6)
+while patladi==False:
+    if sayac==r:
+        print("bum.... {}. kişi öldü".format(sayac))
+        patladi=True
+        olen=kurbanlar[sayac-1]
+    else:
+        print("tık.... {}. kişi kurtuldu, sıra {}. kişiye geçti".format(sayac,sayac+1))
+        kurtulanlar.append(kurbanlar[sayac - 1])
+        sayac+=1
+print("kurtulanlar:{}".format(kurtulanlar))
+print("ölen:{}".format(olen))
